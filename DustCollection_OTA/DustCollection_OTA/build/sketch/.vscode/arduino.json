@@ -1,0 +1,9 @@
+#line 1 "/Users/corywiegert/SynologyDrive/Automated Dust Collection/gitHub/DustCollection_OTA/DustCollection_OTA/.vscode/arduino.json"
+{
+    "port": "/dev/tty.usbserial-8420",
+    "configuration": "xtal=80,vt=flash,exception=disabled,stacksmash=disabled,ssl=all,mmu=3232,non32xfer=fast,eesz=4M2M,ip=lm2f,dbg=Disabled,lvl=None____,wipe=none,baud=921600",
+    "board": "esp8266:esp8266:d1",
+    "sketch": "DustCollection_OTA.ino",
+    "output": "build",
+    "arduino.defaultBaudRate": 250000
+}

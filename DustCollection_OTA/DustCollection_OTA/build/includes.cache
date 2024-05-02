@@ -1,0 +1,197 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/cores/esp8266"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/variants/d1"
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/SynologyDrive/Automated Dust Collection/gitHub/DustCollection_OTA/DustCollection_OTA/build/sketch/DustCollection_OTA.ino.cpp",
+    "Include": "BlynkSimpleEsp8266_SSL.h",
+    "Includepath": "/Users/corywiegert/Documents/Arduino/libraries/Blynk/src"
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/SynologyDrive/Automated Dust Collection/gitHub/DustCollection_OTA/DustCollection_OTA/build/sketch/DustCollection_OTA.ino.cpp",
+    "Include": "ESP8266WiFi.h",
+    "Includepath": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src"
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/SynologyDrive/Automated Dust Collection/gitHub/DustCollection_OTA/DustCollection_OTA/build/sketch/DustCollection_OTA.ino.cpp",
+    "Include": "EEPROM.h",
+    "Includepath": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/EEPROM"
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/SynologyDrive/Automated Dust Collection/gitHub/DustCollection_OTA/DustCollection_OTA/build/sketch/DustCollection_OTA.ino.cpp",
+    "Include": "ESP8266WebServer.h",
+    "Includepath": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src"
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/SynologyDrive/Automated Dust Collection/gitHub/DustCollection_OTA/DustCollection_OTA/build/sketch/DustCollection_OTA.ino.cpp",
+    "Include": "ESP8266HTTPUpdateServer.h",
+    "Includepath": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266HTTPUpdateServer/src"
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/SynologyDrive/Automated Dust Collection/gitHub/DustCollection_OTA/DustCollection_OTA/build/sketch/DustCollection_OTA.ino.cpp",
+    "Include": "DNSServer.h",
+    "Includepath": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/DNSServer/src"
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/SynologyDrive/Automated Dust Collection/gitHub/DustCollection_OTA/DustCollection_OTA/build/sketch/DustCollection_OTA.ino.cpp",
+    "Include": "Ticker.h",
+    "Includepath": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/Ticker/src"
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/SynologyDrive/Automated Dust Collection/gitHub/DustCollection_OTA/DustCollection_OTA/build/sketch/DustCollection_OTA.ino.cpp",
+    "Include": "ArduinoMqttClient.h",
+    "Includepath": "/Users/corywiegert/Documents/Arduino/libraries/ArduinoMqttClient/src"
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/SynologyDrive/Automated Dust Collection/gitHub/DustCollection_OTA/DustCollection_OTA/build/sketch/DustCollection_OTA.ino.cpp",
+    "Include": "ArduinoJson.h",
+    "Includepath": "/Users/corywiegert/Documents/Arduino/libraries/ArduinoJson/src"
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/SynologyDrive/Automated Dust Collection/gitHub/DustCollection_OTA/DustCollection_OTA/build/sketch/DustCollection_OTA.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Documents/Arduino/libraries/Blynk/src/utility/BlynkDebug.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Documents/Arduino/libraries/Blynk/src/utility/BlynkHandlers.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Documents/Arduino/libraries/Blynk/src/utility/BlynkHelpers.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Documents/Arduino/libraries/Blynk/src/utility/BlynkTimeUtils.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Documents/Arduino/libraries/Blynk/src/utility/BlynkTimer.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Documents/Arduino/libraries/Blynk/src/utility/utility.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/BearSSLHelpers.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/CertStoreBearSSL.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/ESP8266WiFi.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/ESP8266WiFiAP.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/ESP8266WiFiGeneric.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/ESP8266WiFiGratuitous.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/ESP8266WiFiMulti.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/ESP8266WiFiSTA-WPS.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/ESP8266WiFiSTA.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/ESP8266WiFiScan.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiClient.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiClientSecureBearSSL.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiServer.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiServerSecureBearSSL.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiUdp.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/enable_wifi_at_boot_time.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/EEPROM/EEPROM.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src/detail/mimetable.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/DNSServer/src/DNSServer.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Library/Arduino15/packages/esp8266/hardware/esp8266/3.1.2/libraries/Ticker/src/Ticker.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/corywiegert/Documents/Arduino/libraries/ArduinoMqttClient/src/MqttClient.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]

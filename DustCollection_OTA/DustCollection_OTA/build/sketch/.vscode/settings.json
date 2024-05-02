@@ -1,0 +1,19 @@
+#line 1 "/Users/corywiegert/SynologyDrive/Automated Dust Collection/gitHub/DustCollection_OTA/DustCollection_OTA/.vscode/settings.json"
+{
+    "files.associations": {
+        "istream": "cpp",
+        "locale": "cpp",
+        "streambuf": "cpp",
+        "__bit_reference": "cpp",
+        "__hash_table": "cpp",
+        "__split_buffer": "cpp",
+        "array": "cpp",
+        "initializer_list": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp"
+    },
+    "arduino.defaultBaudRate": 250000,
+
+}
