@@ -49,7 +49,8 @@
  * version:
  *     4/07/2024  CDW   1.1.0 -- plugged into NODE-RED, skipping the outlet with a 0 as the outlet pin
  *     4/27/2024  CDW   1.3.0 -- implemented V0 to erase EEPROM, did null checks on BLYNK UI, set them to constants when null
- *     4/27/2024  CDW   1.3.3 -- updated the gate pin to hard default to GPIO 5 or pin D1 on teh WEMOS D1 mini
+ *     4/27/2024  CDW   1.3.3 -- updated the gate pin to hard default to GPIO 5 or pin D1 on teh WEMOS D1 
+ *     5/6/2024   CDW   1.3.4 -- publish to GitHub under new repository
  * 
 *********************************************************************************************************************/
 
@@ -58,7 +59,7 @@
 #define BLYNK_TEMPLATE_ID "TMPL24bXLC68L"
 #define BLYNK_TEMPLATE_NAME "Blynk Provision"
 
-#define BLYNK_FIRMWARE_VERSION "1.3.3"  
+#define BLYNK_FIRMWARE_VERSION "1.3.4"  
 
 #define BLYNK_PRINT Serial
 //#define BLYNK_DEBUG
