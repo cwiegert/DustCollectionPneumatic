@@ -37,17 +37,18 @@
    *   variable is read and filled from the config file
    ***********************************************/
       struct    gateDefinition {
-         int    gateID = -1;
-         char   gateName[32] = {"Need a Name"};        // name of gate
-         bool   openClose;                             // is the gate open or closed? 
-         char   gateMap [32] = {"0000000000"};         // string containing instructions on which gates to open and close
-         int    collectorDelay = 0;                    //  number of seconds to wait until turning off collector
-         int    gatePin = GATE_PIN;                               // pint on the ESP8266 to open/close the gate
-         char   toolName[32] = {"Give me a Name"};     // if the gate is the primary gate for the tool, put the tool name here
-         int    outletPin = OUTLET_PIN;                         // digital pin to monitor the outlet, default to 0, which is ignored in monitoring
-         char   nodeRedPrefix[16] = {"Dust/NODE?"};    // key for the topic to be sent to Node-Red  (Not implemented yet)
-         bool   outLetDigital;                         // is the outlet monitor hard wired to a digital pin, or code managed through virtual pin
-         bool   gateDigital;                           // gate switch controled through virtual pin logic, or hard wired to digital pin
+         uint32_t    wemos_id = 0;                              // unique ID generated off the chip of the wemos
+         int         gateID = -1;
+         char        gateName[32] = {"Need a Name"};        // name of gate
+         bool        openClose;                             // is the gate open or closed? 
+         char        gateMap [32] = {"0000000000"};         // string containing instructions on which gates to open and close
+         int         collectorDelay = 0;                    //  number of seconds to wait until turning off collector
+         int         gatePin = GATE_PIN;                               // pint on the ESP8266 to open/close the gate
+         char        toolName[32] = {"Give me a Name"};     // if the gate is the primary gate for the tool, put the tool name here
+         int         outletPin = OUTLET_PIN;                         // digital pin to monitor the outlet, default to 0, which is ignored in monitoring
+         char        nodeRedPrefix[16] = {"Dust/NODE?"};    // key for the topic to be sent to Node-Red  (Not implemented yet)
+         bool        outLetDigital;                         // is the outlet monitor hard wired to a digital pin, or code managed through virtual pin
+         bool        gateDigital;                           // gate switch controled through virtual pin logic, or hard wired to digital pin
         }   blastGate;
 
 int storeVirtualPin;

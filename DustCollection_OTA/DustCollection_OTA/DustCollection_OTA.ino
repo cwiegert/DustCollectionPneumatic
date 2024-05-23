@@ -51,6 +51,7 @@
  *     4/27/2024  CDW   1.3.0 -- implemented V0 to erase EEPROM, did null checks on BLYNK UI, set them to constants when null
  *     4/27/2024  CDW   1.3.3 -- updated the gate pin to hard default to GPIO 5 or pin D1 on teh WEMOS D1 
  *     5/6/2024   CDW   1.3.4 -- publish to GitHub under new repository
+ *     5/17/2024  CDW   1.3.5 -- added the chip id as part of the blast gate structure.   Will use this in NodeRed for maintaining gate ID
  * 
 *********************************************************************************************************************/
 
@@ -59,7 +60,7 @@
 #define BLYNK_TEMPLATE_ID "TMPL24bXLC68L"
 #define BLYNK_TEMPLATE_NAME "Blynk Provision"
 
-#define BLYNK_FIRMWARE_VERSION "1.3.4"  
+#define BLYNK_FIRMWARE_VERSION "1.3.5"  
 
 #define BLYNK_PRINT Serial
 //#define BLYNK_DEBUG
@@ -296,10 +297,11 @@ void nodeRedListenCallback ( int _size)
      if (topic == GATE_ID_SEND)           // if Node-red has asked this gate to publish the ID
       {
         String mapToJson;
+        jSonDoc["gate chip id"] = blastGate.wemos_id;     // 1.3.5 added the wemos_id to use in the check for unique and clearing the array
         jSonDoc["gate_ID"] = blastGate.gateID;
         jSonDoc["gate Name"] = blastGate.gateName;
         serializeJsonPretty (jSonDoc, mapToJson);
-        //serializeJsonPretty (jSonDoc, Serial);
+    //    serializeJsonPretty (jSonDoc, Serial);
         mqttClient.beginMessage (PUBLISH_GATE_ID);
         mqttClient.println (mapToJson);
         mqttClient.endMessage();
@@ -593,10 +595,13 @@ void setup()
           {
             setBlynkConfigUI();                   // Set the Blynk config screen
             setPins();                            // Set the appropriate digital pins
-            String mapToJson;                     // Variable to hold the Json structure
+            blastGate.wemos_id = ESP.getChipId();
+            String mapToJson;                           // Variable to hold the Json structure
+            jSonDoc["gate chip id"] = blastGate.wemos_id;
             jSonDoc["gate_ID"] = blastGate.gateID;
             jSonDoc["gate Name"] = blastGate.gateName;
             serializeJsonPretty (jSonDoc, mapToJson);
+            //serializeJsonPretty (jSonDoc, Serial);
             if (!mqttClient.connected())
               {
                 Serial.println ("have to reconnect to mqqt");
@@ -619,6 +624,7 @@ void setup()
     statusUpdate.clear();
     statusUpdate.println(F("ready"));
     Serial.println(F("ready!!!!!"));
+    Serial.println("wemos id ==> " + String (blastGate.wemos_id));
   }
 
 void loop() 
