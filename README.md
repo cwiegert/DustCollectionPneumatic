@@ -27,11 +27,15 @@
   <img width="300" alt="image" src="https://github.com/cwiegert/DustCollectionPneumatic/assets/33184701/e9f78e02-6d38-43e2-8a1f-7dd58b5663c3">
 
 
-  **Voltaage Sensor** -- simplifying the systsem was 1 of the goals of this project.    Instead of having to monitor and sense a specific voltage change, I used a 5V relay switch sensor to simply send 5 volts to a INPUT_PULLUP pin and bring that pin to ground.   No, it's a matter of reading LOW on that pin, and not having to debounce and calculate the delta to remove noise from the system.   I used these from Amazon [Voltage Sensor](https://www.amazon.com/dp/B0B7VT46KG?psc=1&ref=ppx_yo2ov_dt_b_product_details)  as the sensors.  K1 and K2 are simply a switch relay which is normally open, and when current is applied, the NO switch is closed.   ![Relay](img width="200" alt="image" src="https://github.com/cwiegert/DustCollectionPneumatic/assets/33184701/903b7fa0-ddce-4260-b510-41e7a9a26dd7")
+  **Voltaage Sensor** -- simplifying the systsem was 1 of the goals of this project.    Instead of having to monitor and sense a specific voltage change, I used a 5V relay switch sensor to simply send 5 volts to a INPUT_PULLUP pin and bring that pin to ground.   No, it's a matter of reading LOW on that pin, and not having to debounce and calculate the delta to remove noise from the system.   I used these from Amazon [Voltage Sensor](https://www.amazon.com/dp/B0B7VT46KG?psc=1&ref=ppx_yo2ov_dt_b_product_details)  as the sensors.  K1 and K2 are simply a switch relay which is normally open, and when current is applied, the NO switch is closed.   [Relay](https://www.amazon.com/gp/product/B01MCWO35P/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) 
+<img width="200" alt="image" src="https://m.media-amazon.com/images/I/61duwk7MCIL._AC_SL1100_.jpg">
+
 
 **12V external power supply** -- used to power the solenoid through the Wemos Relay shield.   Of course, if you are using heavier duty solenoid (24V) you will need to match the power supply to the voltage of the solenoid, and have a corresponding relay that can handle the voltage.   I typically use the MDR-60-12 by MeanWell, as I have used MeanWell on all my automation projects and have never had any issues.
 
 **5V LED's colored** -- used to provide external indication of what is happening with the lights of the Wemos and Relay.   Have Red for when the relay is activated and voltage through NO, and Blue which is synched up to the Wemos onboard LED flashing light.   These come with an inline resistor --> [5V Colored LED](https://www.amazon.com/dp/B07TPMRLVR?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+
+**Buck Converter** -- added this to the system to manage the all the power.   The 12V line will run from teh power source, either in parallel or branched from gate to gate along a single trunk.   [Buck Converter](https://www.amazon.com/dp/B081N6WWJS?psc=1&ref=ppx_yo2ov_dt_b_product_details) the 12v, will be dropped down to 5V to run the wemos, and a line will branch off the [Splitter](https://www.amazon.com/dp/B087B6FQLB?psc=1&ref=ppx_yo2ov_dt_b_product_details) to run the solenoid (12V) and another 12V branch to power the next gate in line.
 
 
   **Soldering the Wires, and configuring the pins**
@@ -102,6 +106,12 @@ Along with the [Relay Shields]( https://www.amazon.com/dp/B093LC9DNJ?psc=1&ref=p
 [Air mufflers](https://www.amazon.com/dp/B08K6T9H2K?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 
 [Air Controller](https://www.amazon.com/dp/B01ILJFJ4I?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+
+[12V - 5V Buck Convert](https://www.amazon.com/dp/B081N6WWJS?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+
+[Wire Connector and Splitter](https://www.amazon.com/dp/B087B6FQLB?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+
+
 
 
 
