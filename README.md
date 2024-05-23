@@ -107,5 +107,11 @@ Along with the [Relay Shields]( https://www.amazon.com/dp/B093LC9DNJ?psc=1&ref=p
 
 [Air Controller](https://www.amazon.com/dp/B01ILJFJ4I?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 
+[12V - 5V Buck Convert](https://www.amazon.com/dp/B081N6WWJS?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+
+[Wire Connector and Splitter](https://www.amazon.com/dp/B087B6FQLB?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+
+
+
 
 
