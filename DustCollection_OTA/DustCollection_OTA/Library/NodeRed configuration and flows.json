@@ -16,14 +16,6 @@
         "env": []
     },
     {
-        "id": "c9ea7ba5a2291640",
-        "type": "tab",
-        "label": "Flow 4",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "21ee3988d339ed69",
         "type": "mqtt-broker",
         "name": "AnnapurnaNas",
@@ -186,32 +178,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 520,
+        "x": 700,
         "y": 100,
         "wires": [
             [
                 "8a786a2efdfe90f9"
-            ]
-        ]
-    },
-    {
-        "id": "6bcb6d6ac3e30e81",
-        "type": "mqtt in",
-        "z": "b3475eb191ac1338",
-        "name": "Request Gate Id's",
-        "topic": "Dust/Gate ID",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "13eb506dadbcc936",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 110,
-        "y": 300,
-        "wires": [
-            [
-                "fa6dd956d75cab7b"
             ]
         ]
     },
@@ -245,8 +216,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 100,
-        "y": 240,
+        "x": 280,
+        "y": 540,
         "wires": [
             [
                 "4bb0a5abc7fb0a3e"
@@ -265,30 +236,13 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
-        "y": 240,
+        "x": 650,
+        "y": 540,
         "wires": [
             [
-                "ca49b808947fab0b"
+                "7229ed5f124e0c1c"
             ]
         ]
-    },
-    {
-        "id": "ca49b808947fab0b",
-        "type": "debug",
-        "z": "b3475eb191ac1338",
-        "name": "clear Array",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 890,
-        "y": 240,
-        "wires": []
     },
     {
         "id": "9abf80db22291ba9",
@@ -365,35 +319,6 @@
         ]
     },
     {
-        "id": "8252c6204099fe7c",
-        "type": "inject",
-        "z": "b3475eb191ac1338",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "3600",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 110,
-        "y": 600,
-        "wires": [
-            [
-                "7229ed5f124e0c1c"
-            ]
-        ]
-    },
-    {
         "id": "7229ed5f124e0c1c",
         "type": "mqtt out",
         "z": "b3475eb191ac1338",
@@ -407,7 +332,7 @@
         "correl": "",
         "expiry": "",
         "broker": "13eb506dadbcc936",
-        "x": 380,
+        "x": 880,
         "y": 600,
         "wires": [],
         "info": "This message is 13 characters long into the arduino\nit's length is calculated on the opic plus the payload\n"
@@ -478,8 +403,8 @@
         "property": "payload",
         "action": "obj",
         "pretty": false,
-        "x": 275,
-        "y": 95,
+        "x": 450,
+        "y": 100,
         "wires": [
             [
                 "301d17151a9d5ee8"
@@ -538,7 +463,7 @@
         "type": "function",
         "z": "b3475eb191ac1338",
         "name": "Checking Unique Gate",
-        "func": "// Get the existing flow array from context\nlet gateIDs = flow.get('gateIDs');\nvar holder = msg.payload[\"holder\"];\nvar gateId = msg.payload[\"gate Id\"];\nnode.warn (\"value of holder == \" + holder);\nnode.warn (\"value of gateId ==> \" + gateId);\n\n// Check if the payload exists in the array\nif (!gateIDs.includes(gateId)) \n  {\n    node.warn(\"I am in a unique gate situation\");\n    gateIDs.push(gateId);   // register the new gate to the array\n    flow.set('gateIDs', gateIDs); \n    if (gateIDs.includes(holder))\n      {\n        gateIDs = gateIDs.filter(id => id != holder );\n        flow.set('gateIDs', gateIDs);\n      }\n    msg.exists = false;\n    \n  } else \n    {\n        gateIDs = gateIDs.filter(id => id != gateId );\n        let maxGateId = Math.max(...gateIDs);\n        msg.payload[\"gate Id\"] = maxGateId + 1; // Store the maximum sensor ID in the message payload\n        gateIDs.push(maxGateId + 1);\n        flow.set('gateIDs', gateIDs);\n        node.warn(\"I am in a non-unique gate situation\");\n        msg.exists = true;\n}\nvar index = 0;\ndo {\n        node.warn (\"array values ==> \"+ gateIDs[index]);\n        index++;\n    } while (index < gateIDs.length);\n\n// Pass the message to the next node in the flow\nreturn msg;\n",
+        "func": "// Get the existing flow array from context\nlet gateIDs = flow.get('gateIDs');\nvar holder = msg.payload[\"holder\"];\nvar gateId = msg.payload[\"gate Id\"];\n//node.warn (\"value of holder == \" + holder);\n//node.warn (\"value of gateId ==> \" + gateId);\n\n// Check if the payload exists in the array\nif (!gateIDs.includes(gateId)) \n  {\n    node.warn(\"I am in a unique gate situation\");\n    gateIDs.push(gateId);   // register the new gate to the array\n  \n    flow.set('gateIDs', gateIDs); \n    if (gateIDs.includes(holder))\n      {\n        gateIDs = gateIDs.filter(id => id != holder );\n        flow.set('gateIDs', gateIDs);\n      }\n    msg.exists = false;\n    \n  } else \n    {\n        gateIDs = gateIDs.filter(id => id != gateId );\n        let maxGateId = Math.max(...gateIDs);\n        msg.payload[\"gate Id\"] = maxGateId + 1; // Store the maximum sensor ID in the message payload\n        gateIDs.push(maxGateId + 1);\n        flow.set('gateIDs', gateIDs);\n        node.warn(\"I am in a non-unique gate situation\");\n        msg.exists = true;\n}\nvar index = 0;\ndo {\n        node.warn (\"array values ==> \"+ gateIDs[index]);\n        index++;\n    } while (index < gateIDs.length);\n\n// Pass the message to the next node in the flow\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -617,8 +542,8 @@
         "links": [
             "2510b40ce693100f"
         ],
-        "x": 685,
-        "y": 80,
+        "x": 835,
+        "y": 20,
         "wires": []
     },
     {
@@ -629,7 +554,7 @@
         "links": [
             "7ddcc2445ddaf65b"
         ],
-        "x": 755,
+        "x": 855,
         "y": 100,
         "wires": [
             [
@@ -651,7 +576,7 @@
         "correl": "",
         "expiry": "",
         "broker": "21ee3988d339ed69",
-        "x": 920,
+        "x": 980,
         "y": 100,
         "wires": []
     },
@@ -692,6 +617,74 @@
         "broker": "13eb506dadbcc936",
         "x": 330,
         "y": 180,
+        "wires": []
+    },
+    {
+        "id": "95c4715314d03b28",
+        "type": "inject",
+        "z": "b3475eb191ac1338",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "7200",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 640,
+        "wires": [
+            [
+                "0ed5977e8abe686b"
+            ]
+        ]
+    },
+    {
+        "id": "04f804e73149bb86",
+        "type": "mqtt in",
+        "z": "b3475eb191ac1338",
+        "name": "Request Gate Id's",
+        "topic": "Dust/Gate ID",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "13eb506dadbcc936",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 300,
+        "wires": [
+            [
+                "fa6dd956d75cab7b"
+            ]
+        ]
+    },
+    {
+        "id": "0ed5977e8abe686b",
+        "type": "mqtt out",
+        "z": "b3475eb191ac1338",
+        "name": "Ping Gates",
+        "topic": "Dust/Send Gate ID",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "13eb506dadbcc936",
+        "x": 410,
+        "y": 640,
         "wires": []
     },
     {
@@ -746,7 +739,7 @@
         "type": "function",
         "z": "dd58a77e5217ef71",
         "name": "Set Flow Vars",
-        "func": "//check to make sure there is not a machine already controlling the collector\n\nif (flow.get(\"machine\") == undefined || flow.get (\"machine\") == null)\n    {\n        flow.set(\"timer\", 0);\n        flow.set (\"offDelay\", msg.payload.spinDown);\n        flow.set (\"machine\" , msg.payload.machine);\n        flow.set(\"GateId\", msg.payload[\"sent Gate\"]);\n        flow.set (\"collectorState\", msg.payload.on);\n\n        node.warn(msg.payload.on);\n        node.warn(msg.payload.spinDown);\n        node.warn (\"machine ==> \" + flow.get(\"machine\"));\n        node.warn (\"gateID == \" + flow.get(\"GateId\"));\n        node.warn(\" gate in set flow ==> \"+ msg.payload[\"sent Gate\"]);\n        node.warn(msg.payload);\n        return msg;\n    }\nelse\n    {\n        return false;\n    }\n\n\n\n",
+        "func": "//check to make sure there is not a machine already controlling the collector\n\nif (flow.get(\"machine\") == undefined || flow.get (\"machine\") == null)\n    {\n        flow.set(\"timer\", 0);\n        flow.set (\"offDelay\", msg.payload.spinDown);\n        flow.set (\"machine\" , msg.payload.machine);\n        flow.set(\"GateId\", msg.payload[\"sent Gate\"]);\n        flow.set (\"collectorState\", msg.payload.on);\n\n        //node.warn(msg.payload.on);\n        //node.warn(msg.payload.spinDown);\n        //node.warn (\"machine ==> \" + flow.get(\"machine\"));\n        //node.warn (\"gateID == \" + flow.get(\"GateId\"));\n        //node.warn(\" gate in set flow ==> \"+ msg.payload[\"sent Gate\"]);\n        //node.warn(msg.payload);\n        return msg;\n    }\nelse\n    {\n        return false;\n    }\n\n\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -856,7 +849,7 @@
         "to": "",
         "reg": false,
         "x": 660,
-        "y": 160,
+        "y": 140,
         "wires": [
             [
                 "f140c3c0f46abc3e"
@@ -998,201 +991,18 @@
         "correl": "",
         "expiry": "",
         "broker": "13eb506dadbcc936",
-        "x": 810,
+        "x": 890,
         "y": 80,
         "wires": []
     },
     {
-        "id": "3e4b7a95.5e6d7c",
-        "type": "trigger",
-        "z": "c9ea7ba5a2291640",
-        "name": "",
-        "op1": "",
-        "op2": "true",
-        "op1type": "pay",
-        "op2type": "bool",
-        "duration": "3",
-        "extend": false,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "payload.timestamp",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 200,
-        "y": 160,
-        "wires": [
-            [
-                "ad24532b.428f98"
-            ]
-        ]
-    },
-    {
-        "id": "ad24532b.428f98",
-        "type": "function",
-        "z": "c9ea7ba5a2291640",
-        "name": "Check Timestamp",
-        "func": "if (!msg.hasOwnProperty('reset')) {\n    // Timestamp not reset, proceed with normal flow\n    return msg;\n} else {\n    // Timestamp reset, reset the delay in the Trigger node\n    return { reset: true };\n}",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 400,
-        "y": 160,
-        "wires": [
-            [
-                "5e8a7a63.aa9c4c"
-            ]
-        ]
-    },
-    {
-        "id": "5e8a7a63.aa9c4c",
-        "type": "debug",
-        "z": "c9ea7ba5a2291640",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 160,
+        "id": "1ee8999b0a8bed7d",
+        "type": "comment",
+        "z": "dd58a77e5217ef71",
+        "name": "Return to gates",
+        "info": "returning to the Gates Context to run gate maps\n",
+        "x": 740,
+        "y": 40,
         "wires": []
-    },
-    {
-        "id": "50e98238.1663fc",
-        "type": "inject",
-        "z": "c9ea7ba5a2291640",
-        "name": "Start Machine Cycle",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 110,
-        "y": 260,
-        "wires": [
-            [
-                "509e6842.2e6d14"
-            ]
-        ]
-    },
-    {
-        "id": "509e6842.2e6d14",
-        "type": "function",
-        "z": "c9ea7ba5a2291640",
-        "name": "Store Start Time",
-        "func": "flow.set(\"startTime\", Date.now());\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 260,
-        "wires": [
-            [
-                "a048245c.4d56b8"
-            ]
-        ]
-    },
-    {
-        "id": "a048245c.4d56b8",
-        "type": "delay",
-        "z": "c9ea7ba5a2291640",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 490,
-        "y": 260,
-        "wires": [
-            [
-                "bda1e3d1.68b1b"
-            ]
-        ]
-    },
-    {
-        "id": "bda1e3d1.68b1b",
-        "type": "function",
-        "z": "c9ea7ba5a2291640",
-        "name": "Calculate Elapsed Time",
-        "func": "var startTime = flow.get(\"startTime\");\nvar currentTime = Date.now();\nvar elapsedTime = currentTime - startTime;\nmsg.payload = elapsedTime;\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 680,
-        "y": 260,
-        "wires": [
-            [
-                "1a1f00ae.c7e8ba"
-            ]
-        ]
-    },
-    {
-        "id": "1a1f00ae.c7e8ba",
-        "type": "switch",
-        "z": "c9ea7ba5a2291640",
-        "name": "Check Delay Time",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "gt",
-                "v": "5000",
-                "vt": "flow"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 900,
-        "y": 260,
-        "wires": [
-            [
-                "db73f09f.90b0f8"
-            ]
-        ]
-    },
-    {
-        "id": "db73f09f.90b0f8",
-        "type": "function",
-        "z": "c9ea7ba5a2291640",
-        "name": "Turn Off Dust Collector",
-        "func": "// Add code here to turn off the dust collector\nmsg.payload = \"Dust Collector Off\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 1090,
-        "y": 260,
-        "wires": [
-            []
-        ]
     }
 ]

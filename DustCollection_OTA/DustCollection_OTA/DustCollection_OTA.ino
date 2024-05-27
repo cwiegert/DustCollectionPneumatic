@@ -52,6 +52,10 @@
  *     4/27/2024  CDW   1.3.3 -- updated the gate pin to hard default to GPIO 5 or pin D1 on teh WEMOS D1 
  *     5/6/2024   CDW   1.3.4 -- publish to GitHub under new repository
  *     5/17/2024  CDW   1.3.5 -- added the chip id as part of the blast gate structure.   Will use this in NodeRed for maintaining gate ID
+ *     5/26/2024  CDW   1.3.6 -- changed the gate map for loop, instead of temp+1 < string, it's just temp < strlng
+ *     5/26/2024  CDW   1.4.0 -- MAJOR change to the MqttClient.cpp library from the Arduino client library.   Changed the TX_PAYLOAD_BUFFER_SIZE 512 from 256
+ *                               The Mqtt JSON messages were being truncated at 256 (default for the payload buffer).   Will need to package this library with the git, or 
+ *                               make sure to call out in the readme.   Have highlighted in the CPP code
  * 
 *********************************************************************************************************************/
 
@@ -60,7 +64,7 @@
 #define BLYNK_TEMPLATE_ID "TMPL24bXLC68L"
 #define BLYNK_TEMPLATE_NAME "Blynk Provision"
 
-#define BLYNK_FIRMWARE_VERSION "1.3.5"  
+#define BLYNK_FIRMWARE_VERSION "1.4.0"  
 
 #define BLYNK_PRINT Serial
 //#define BLYNK_DEBUG
@@ -220,11 +224,13 @@ void runOutletCheck()
         jSonDoc["machine"] = blastGate.toolName;
 
         JsonObject gateMap = jSonDoc.createNestedObject("gateMap");
-        for (int temp = 0; temp +1  < strlen(blastGate.gateMap); temp++)    // create the nested JSON object with the gate states set 1 per element
-            {
-              gateMap[String(temp)] = blastGate.gateMap[temp] - '0';
-            } 
-        
+        int temp = 0;
+        do
+        {
+          gateMap[String(temp)] = blastGate.gateMap[temp] - '0';          // create the nested JSON object with the gate states set 1 per element ()  1.3.6
+          temp++;
+        } while (blastGate.gateMap[temp] != '\0' && temp < 32);
+           
         serializeJsonPretty(jSonDoc, mapToJson);
         //serializeJsonPretty(jSonDoc, Serial);
         if (!mqttClient.connected())    // check for a disconnect and reconnect to make sure messages go through
@@ -278,8 +284,8 @@ void nodeRedListenCallback ( int _size)
     String topic;
     //int error = 0;
     
-    DynamicJsonDocument jSonDoc(JSON_SIZE);
-
+    //DynamicJsonDocument jSonDoc(JSON_SIZE);
+   DynamicJsonDocument jSonDoc(512);
     topic = mqttClient.messageTopic();
       if (topic != GATE_ID_SEND && topic != CLOSE_ME)    // check the topic to make sure there is a json document
     {     
@@ -561,8 +567,8 @@ void setup()
     Serial.begin(115200);
     delay(100);
     EEPROM.begin (2048);
-    DynamicJsonDocument jSonDoc(JSON_SIZE);
-
+   //DynamicJsonDocument jSonDoc(JSON_SIZE);
+    DynamicJsonDocument jSonDoc(512);
     BlynkEdgent.begin();
     while (BlynkState::get() != MODE_RUNNING && count < 300)     //  give time for the Blynk.edgent() sub functions to execute.   
       {

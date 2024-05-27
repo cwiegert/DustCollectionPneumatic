@@ -35,17 +35,18 @@
 /***********************************************
    *   Structure for the blast gate definition.  each instance
    *   variable is read and filled from the config file
+   *  5/26/2024 -- CDW   1.3.7      Modified gateMap to not have a default length or value
    ***********************************************/
       struct    gateDefinition {
-         uint32_t    wemos_id = 0;                              // unique ID generated off the chip of the wemos
+         uint32_t    wemos_id = 0;                          // unique ID generated off the chip of the wemos
          int         gateID = -1;
          char        gateName[32] = {"Need a Name"};        // name of gate
          bool        openClose;                             // is the gate open or closed? 
-         char        gateMap [32] = {"0000000000"};         // string containing instructions on which gates to open and close
+         char        gateMap [32] = {"000000000000"};       // string containing instructions on which gates to open and close
          int         collectorDelay = 0;                    //  number of seconds to wait until turning off collector
-         int         gatePin = GATE_PIN;                               // pint on the ESP8266 to open/close the gate
+         int         gatePin = GATE_PIN;                    // pint on the ESP8266 to open/close the gate
          char        toolName[32] = {"Give me a Name"};     // if the gate is the primary gate for the tool, put the tool name here
-         int         outletPin = OUTLET_PIN;                         // digital pin to monitor the outlet, default to 0, which is ignored in monitoring
+         int         outletPin = OUTLET_PIN;                // digital pin to monitor the outlet, default to 0, which is ignored in monitoring
          char        nodeRedPrefix[16] = {"Dust/NODE?"};    // key for the topic to be sent to Node-Red  (Not implemented yet)
          bool        outLetDigital;                         // is the outlet monitor hard wired to a digital pin, or code managed through virtual pin
          bool        gateDigital;                           // gate switch controled through virtual pin logic, or hard wired to digital pin
@@ -68,7 +69,7 @@ int            port     = 1883;                 // Port for the mosquito MQTT br
 const long     interval = 100;                 // delay for sending messages 0.1 seconds
 unsigned long  previousMillis = 0;
 
-const size_t   JSON_SIZE = 256;
+const size_t   JSON_SIZE = 512;
 int            count = 0;
 int            holderGateId;
 bool           changeGate = false;
