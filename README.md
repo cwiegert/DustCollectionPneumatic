@@ -91,6 +91,18 @@ Along with the [Relay Shields]( https://www.amazon.com/dp/B093LC9DNJ?psc=1&ref=p
   
 9.  If there is no machine running, the spin down value will be applied, a message to close all gates and spin down the dust collector is issued...
 
+**Assembly of 3D printed parts**
+For simplicity sakes, there have been heated threaded inserts added to this model.   In previous versions, there were threaded holes in the PETG, but the risk of stripping the treads and the screws cross threading made the assembly of the parts difficut.     The buck converter box is connected to the hanger with M2 insters, while the air solenoid and the wire connector/splitter use M3.    To install, use the provided soldering iron tip, heat the soldering iron to 300 C, slip the insert onto the tip and melt it into the pre-printed holes.    
+
+Parts are found in the links section below.
+
+M3  <img width="200" alt="image" src="https://github.com/cwiegert/DustCollectionPneumatic/assets/33184701/a0d9fe45-202a-4e98-929a-1fd551209326">
+
+M2
+<img width="200" alt="image" src="https://github.com/cwiegert/DustCollectionPneumatic/assets/33184701/999271e5-d6ef-42e8-bd36-09f3cf51c99b">
+
+
+______________________________________________________________________________________________________
 **Links**
 
 [3D files](https://www.thingiverse.com/thing:6603995)    other than in this git repo
@@ -128,6 +140,10 @@ Along with the [Relay Shields]( https://www.amazon.com/dp/B093LC9DNJ?psc=1&ref=p
 [12V - 5V Buck Convert](https://www.amazon.com/dp/B081N6WWJS?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 
 [Wire Connector and Splitter](https://www.amazon.com/dp/B087B6FQLB?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+
+[M3 heated insert](https://www.amazon.com/dp/B0BBSLL6G7?ref=ppx_yo2ov_dt_b_product_details&th=1)
+
+[M2 heated insert](https://www.amazon.com/dp/B0CS6XJSSL?ref=ppx_yo2ov_dt_b_product_details&th=1)
 
 
 
