@@ -2,6 +2,24 @@
 ##  This is a next evolution of the Dust Collection EEPROM repo, with IoT and air driven gates
 
 
+**IMPORTANT UPDATE V. 1.4.0 - changes to an arduino library**
+Because the arduino standard install for the ArduinoMqttClient uses the MqttClient.h library, there is a 256 byte limitation on the size of messages sent to the mqtt broker.  To get around this limitation, you can modify the MQttClient.CPP found in the src directory under your standard location for the ArduinoMqttClient library install.   (typically /~/documents/arduino/library)     This repo does not contain the modified file, only the instructuions here on how to modify the buffer size for a larger topic message to the broker.   
+
+If there is a bufffer over run, the arduino library will truncate your Json document to the size of the buffer, and NodeRed will throw an error "unexpected end of JSON file"
+
+To modify to buffer size, open the MqttClient.cpp and chnage the parameter TX_PAYLOAD_BUFFER_SIZE
+
+```  #ifndef TX_PAYLOAD_BUFFER_SIZE
+  #ifdef __AVR__
+    #define TX_PAYLOAD_BUFFER_SIZE 128
+  #else
+ //   #define TX_PAYLOAD_BUFFER_SIZE 256            old code which comes with the arduino library.   
+    #define TX_PAYLOAD_BUFFER_SIZE 512          //  CDW 5/26/2024 because JSON messages were being truncated at 256 bytes
+  #endif
+#endif
+```
+
+
 **Why make the change from the servo driven dust gate automation?**
   
   To start with, the code base for management and administration I was looking for on the dust collection automation was getting too large to run on a single arduino.   Even with the Mega and the 8M of RAM to load programs, I had hit a limit on stability and amount of flexibility necessary for where I wanted to go with the automation.  Instead of trying to get more efficient with the 1 large code set, it was easier to go down the Internet of Things path, and have each gate be an autonomous node, but have it all wired together through NodeRed.   
