@@ -96,9 +96,9 @@ For simplicity sakes, there have been heated threaded inserts added to this mode
 
 Parts are found in the links section below.
 
-M3  <img width="200" alt="image" src="https://github.com/cwiegert/DustCollectionPneumatic/assets/33184701/a0d9fe45-202a-4e98-929a-1fd551209326">
+M2  <img width="200" alt="image" src="https://github.com/cwiegert/DustCollectionPneumatic/assets/33184701/a0d9fe45-202a-4e98-929a-1fd551209326">
 
-M2
+M3
 <img width="200" alt="image" src="https://github.com/cwiegert/DustCollectionPneumatic/assets/33184701/999271e5-d6ef-42e8-bd36-09f3cf51c99b">
 
 
