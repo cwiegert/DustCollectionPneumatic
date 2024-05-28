@@ -320,7 +320,7 @@ void nodeRedListenCallback ( int _size)
           DynamicJsonDocument  mqttDoc (JSON_SIZE);
           
           deserializeJson (mqttDoc, payload);
-        //   serializeJsonPretty (mqttDoc, Serial);
+        //  serializeJsonPretty (mqttDoc, Serial);
           workingGate = mqttDoc["sent Gate"];
           String bgString = String(workingGate);
           String _gate = String(blastGate.gateID);
