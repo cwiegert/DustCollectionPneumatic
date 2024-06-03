@@ -56,6 +56,7 @@
  *     5/26/2024  CDW   1.4.0 -- MAJOR change to the MqttClient.cpp library from the Arduino client library.   Changed the TX_PAYLOAD_BUFFER_SIZE 512 from 256
  *                               The Mqtt JSON messages were being truncated at 256 (default for the payload buffer).   Will need to package this library with the git, or 
  *                               make sure to call out in the readme.   Have highlighted in the CPP code
+ *     
  * 
 *********************************************************************************************************************/
 
@@ -117,10 +118,12 @@ BLYNK_WRITE(V6)  // gate name from the Blynk Config Screen
 
 BLYNK_WRITE(V5)  // gate id from then Blynk Config Screen
 {
+ 
   holderGateId = blastGate.gateID;
   blastGate.gateID = param.asInt();
   dirtyConfigBit = true;
   changeGate = true;
+
 }
 
 BLYNK_WRITE(V9)   //  multi-selector to either open or close gate

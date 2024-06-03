@@ -78,37 +78,6 @@
         "sessionExpiry": ""
     },
     {
-        "id": "f6b3d5021b0a07d9",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "AnnapurnaNas",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
         "id": "c5f6ba68a2e95fea",
         "type": "global-config",
         "name": "global-config",
@@ -158,8 +127,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 75,
-        "y": 95,
+        "x": 70,
+        "y": 100,
         "wires": [
             [
                 "48df7358d5a4a2aa"
@@ -178,7 +147,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
+        "x": 620,
         "y": 100,
         "wires": [
             [
@@ -199,7 +168,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
+        "x": 660,
         "y": 300,
         "wires": []
     },
@@ -216,7 +185,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 280,
+        "x": 100,
         "y": 540,
         "wires": [
             [
@@ -236,7 +205,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 650,
+        "x": 290,
         "y": 540,
         "wires": [
             [
@@ -256,27 +225,6 @@
         "x": 615,
         "y": 40,
         "wires": []
-    },
-    {
-        "id": "002db6db87b21a78",
-        "type": "mqtt in",
-        "z": "b3475eb191ac1338",
-        "name": "Tool Off",
-        "topic": "Dust/Tool Off",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "13eb506dadbcc936",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 70,
-        "y": 40,
-        "wires": [
-            [
-                "aa023a75a7ddaa6b"
-            ]
-        ]
     },
     {
         "id": "aa023a75a7ddaa6b",
@@ -332,8 +280,8 @@
         "correl": "",
         "expiry": "",
         "broker": "13eb506dadbcc936",
-        "x": 880,
-        "y": 600,
+        "x": 500,
+        "y": 540,
         "wires": [],
         "info": "This message is 13 characters long into the arduino\nit's length is calculated on the opic plus the payload\n"
     },
@@ -370,7 +318,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 480,
+        "x": 400,
         "y": 360,
         "wires": [
             [
@@ -391,7 +339,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 890,
+        "x": 670,
         "y": 360,
         "wires": []
     },
@@ -403,7 +351,7 @@
         "property": "payload",
         "action": "obj",
         "pretty": false,
-        "x": 450,
+        "x": 370,
         "y": 100,
         "wires": [
             [
@@ -542,7 +490,7 @@
         "links": [
             "2510b40ce693100f"
         ],
-        "x": 835,
+        "x": 815,
         "y": 20,
         "wires": []
     },
@@ -554,7 +502,7 @@
         "links": [
             "7ddcc2445ddaf65b"
         ],
-        "x": 855,
+        "x": 865,
         "y": 100,
         "wires": [
             [
@@ -575,8 +523,8 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "21ee3988d339ed69",
-        "x": 980,
+        "broker": "13eb506dadbcc936",
+        "x": 1000,
         "y": 100,
         "wires": []
     },
@@ -688,6 +636,27 @@
         "wires": []
     },
     {
+        "id": "002db6db87b21a78",
+        "type": "mqtt in",
+        "z": "b3475eb191ac1338",
+        "name": "Tool Off",
+        "topic": "Dust/Tool Off",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "b86789de1bdbcc44",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 40,
+        "wires": [
+            [
+                "aa023a75a7ddaa6b"
+            ]
+        ]
+    },
+    {
         "id": "e03240742d738347",
         "type": "link in",
         "z": "dd58a77e5217ef71",
@@ -714,7 +683,7 @@
         "freq": "",
         "out": "out",
         "bcm": true,
-        "x": 880,
+        "x": 980,
         "y": 140,
         "wires": []
     },
@@ -848,7 +817,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
+        "x": 740,
         "y": 140,
         "wires": [
             [
@@ -875,7 +844,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
+        "x": 740,
         "y": 220,
         "wires": [
             [
@@ -897,7 +866,7 @@
         "correl": "",
         "expiry": "",
         "broker": "13eb506dadbcc936",
-        "x": 730,
+        "x": 990,
         "y": 320,
         "wires": []
     },
@@ -927,7 +896,7 @@
         "type": "function",
         "z": "dd58a77e5217ef71",
         "name": "Reset Timer",
-        "func": "\n//check to see if this is the first time setting the variables, \n//  it may be the pin on the NodeMCU is not configured correctly\nif (flow.get(\"machine\") == undefined || flow.get (\"machine\") == null)\n    {\n        node.warn (\"I fell into the undefined and null\");\n        return msg;\n    }\nif (flow.get(\"machine\") == msg.payload.machine && flow.get(\"GateId\") == msg.payload[\"sent Gate\"])\n    {\n        node.warn (\"I am resetting the timer\");\n        node.warn (\"value of timer ==> \" + flow.get(\"timer\"));\n        flow.set (\"timer\", 0);\n    }\nreturn msg;",
+        "func": "\n//check to see if this is the first time setting the variables, \n//  it may be the pin on the NodeMCU is not configured correctly\nif (flow.get(\"machine\") == undefined || flow.get (\"machine\") == null)\n    {\n        //node.warn (\"I fell into the undefined and null\");\n        return msg;\n    }\nif (flow.get(\"machine\") == msg.payload.machine && flow.get(\"GateId\") == msg.payload[\"sent Gate\"])\n    {\n        //node.warn (\"I am resetting the timer\");\n        //node.warn (\"value of timer ==> \" + flow.get(\"timer\"));\n        flow.set (\"timer\", 0);\n    }\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -959,8 +928,8 @@
         "y": 320,
         "wires": [
             [
-                "827333da1b306ddc",
-                "e1dc4628819af4ac"
+                "e1dc4628819af4ac",
+                "3f105963e41d98c0"
             ]
         ]
     },
@@ -991,7 +960,7 @@
         "correl": "",
         "expiry": "",
         "broker": "13eb506dadbcc936",
-        "x": 890,
+        "x": 770,
         "y": 80,
         "wires": []
     },
@@ -1003,6 +972,41 @@
         "info": "returning to the Gates Context to run gate maps\n",
         "x": 740,
         "y": 40,
+        "wires": []
+    },
+    {
+        "id": "3f105963e41d98c0",
+        "type": "delay",
+        "z": "dd58a77e5217ef71",
+        "name": "Let the collector spin down",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 780,
+        "y": 320,
+        "wires": [
+            [
+                "827333da1b306ddc"
+            ]
+        ]
+    },
+    {
+        "id": "a0f95ebe0db9e149",
+        "type": "comment",
+        "z": "dd58a77e5217ef71",
+        "name": "Collector Spin Down",
+        "info": "If we do not let the collector spin down prior to closing all gates, \nIt may cause a vaccuum sitation in the entire system\nWe want to delay sending the topic to all the gates\nto close.",
+        "x": 750,
+        "y": 360,
         "wires": []
     }
 ]
