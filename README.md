@@ -145,6 +145,10 @@ ________________________________________________________________________________
 
 [M2 heated insert](https://www.amazon.com/dp/B0CS6XJSSL?ref=ppx_yo2ov_dt_b_product_details&th=1)
 
+[Raspberry Pi case](https://www.amazon.com/dp/B08VSDCQM2?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+
+[Raspberry Pi monitor](https://www.amazon.com/dp/B0153R2A9I?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+
 
 
 
