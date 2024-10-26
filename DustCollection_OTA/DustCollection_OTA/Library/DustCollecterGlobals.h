@@ -42,7 +42,7 @@
          int         gateID = -1;
          char        gateName[32] = {"Need a Name"};        // name of gate
          bool        openClose;                             // is the gate open or closed? 
-         char        gateMap [32] = {"000000000000"};       // string containing instructions on which gates to open and close
+         char        gateMap [32] = {"000000000000"};       // string containing instructions on which gates to open and close  0 based array, Gate numbering typically starts with 1
          int         collectorDelay = 0;                    //  number of seconds to wait until turning off collector
          int         gatePin = GATE_PIN;                    // pint on the ESP8266 to open/close the gate
          char        toolName[32] = {"Give me a Name"};     // if the gate is the primary gate for the tool, put the tool name here

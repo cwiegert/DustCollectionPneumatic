@@ -1,0 +1,23 @@
+##############################
+#  ADXL configuration file for resonance testing
+#   the neptune 4 Pro.
+#  maintained as a separate file to help with simplicity in the printer.cfg
+#  found instructions at https://www.reddit.com/r/ElegooNeptune4/comments/175zsm0/input_shaping_using_the_kusba_adxl345_unit/
+###############################
+
+[mcu adxl]
+
+serial: /dev/serial/by-id/usb-Anchor_Rampon-if00
+
+[adxl345]
+
+cs_pin: adxl:CS
+
+[resonance_tester]
+
+accel_chip: adxl345
+
+probe_points:
+
+110, 110, 20
+
